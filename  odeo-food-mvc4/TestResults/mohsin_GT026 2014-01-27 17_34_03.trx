@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="c1375fcc-5991-40a3-99dc-c73223051051" name="mohsin@GT026 2014-01-27 17:34:03" runUser="GENIE\mohsin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="62b22538-2360-4f79-b680-2ac60f5fc859">
+    <Deployment runDeploymentRoot="mohsin_GT026 2014-01-27 17_34_03">
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\OdeoFoodMVC4\bin\OdeoFoodMVC4.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll" />
+      <DeploymentItem filename="c:\users\mohsin\documents\visual studio 2010\Projects\OdeoFoodMVC4\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-01-27T17:34:03.4284119+05:00" queuing="2014-01-27T17:34:05.3440263+05:00" start="2014-01-27T17:34:05.3960628+05:00" finish="2014-01-27T17:34:06.0225552+05:00" />
+  <ResultSummary outcome="Warning">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="GT026" outcome="Warning" timestamp="2014-01-27T17:34:05.3400208+05:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'log4net' directly or indirectly referenced by the test container 'c:\users\mohsin\documents\visual studio 2010\projects\odeofoodmvc4\odeofoodmvc4.tests\bin\debug\odeofoodmvc4.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="GT026" outcome="Warning" timestamp="2014-01-27T17:34:05.3400208+05:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Org.Mentalis.Security.Cryptography' directly or indirectly referenced by the test container 'c:\users\mohsin\documents\visual studio 2010\projects\odeofoodmvc4\odeofoodmvc4.tests\bin\debug\odeofoodmvc4.tests.dll' was not found.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Index" storage="c:\users\mohsin\documents\visual studio 2010\projects\odeofoodmvc4\odeofoodmvc4.tests\bin\debug\odeofoodmvc4.tests.dll" id="d0d1dc82-d954-cec0-8db4-cdf62bf5705e">
+      <Execution id="5db50686-b71c-4f26-be00-1092d7f8e4b1" />
+      <TestMethod codeBase="c:/users/mohsin/documents/visual studio 2010/Projects/OdeoFoodMVC4/OdeoFoodMVC4.Tests/bin/Debug/OdeoFoodMVC4.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OdeoFoodMVC4.Tests.Controllers.HomeControllerTest, OdeoFoodMVC4.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="d0d1dc82-d954-cec0-8db4-cdf62bf5705e" executionId="5db50686-b71c-4f26-be00-1092d7f8e4b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="5db50686-b71c-4f26-be00-1092d7f8e4b1" testId="d0d1dc82-d954-cec0-8db4-cdf62bf5705e" testName="Index" computerName="GT026" duration="00:00:00.2870911" startTime="2014-01-27T17:34:05.4250819+05:00" endTime="2014-01-27T17:34:06.0065437+05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5db50686-b71c-4f26-be00-1092d7f8e4b1">
+    </UnitTestResult>
+  </Results>
+</TestRun>
