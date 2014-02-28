@@ -37,5 +37,18 @@ namespace OdeoFoodMVC4.Controllers
 
             return View();
         }
+        public string ActionOnClick(string input) {
+            if(input=="")
+                return "Enter The value first";
+            else
+            return "your name is "+input;
+        }
+
+
+        public string LogIn(LoginModelNew obj)
+        {
+
+            return obj.username +"   "+ obj.password ;
+        }
     }
 }

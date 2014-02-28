@@ -10,4 +10,10 @@ namespace OdeoFoodMVC4.Models
         public string getAddress { get; set; }
         public string getLocation { get; set; }
     }
+    public class LoginModelNew {
+
+        public string username { get; set; }
+        public string password { get; set; }
+    
+    }
 }

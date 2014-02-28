@@ -2,6 +2,30 @@
 @{
     ViewBag.Title = "Home Page";
 }
+@section scripts{
+<script type="text/jscript">
+    $('#SubmitName').click(function () {
+      
+        var url = "/Home/ActionOnClick";
+        var name = $('#SubmitNameTB').val();
+        $.get(url, { input: name }, function (data) {
+            alert(data);
+        });
+    });
+
+    $('#Save').click(function () {
+        var form = $('#SubmitLogIn');
+        var url = form.attr('action');
+        var formData = form.serialize();
+        $.post(url, formData, function (data) {
+            alert(data);
+              });
+
+
+    });
+</script>
+
+}
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
@@ -20,27 +44,29 @@
     </section>
 }
 <h3>My address is  &nbsp;&nbsp; @Model.getAddress and Location is  &nbsp; &nbsp; &nbsp; @Model.getLocation</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
 
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
 
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>
+
+
+
+enter the name @Html.TextBox("SubmitNameTB")
+ <input type="submit" id="SubmitName" />
+
+ <div style="width:700px;height:400px;border-radius:10px;background-color: rgb(207, 207, 207);">
+ 
+ <form id="SubmitLogIn" action="/Home/LogIn"> 
+ <div style="margin-left:50px;padding-top:30px">
+ <label >UserName</label><br />
+ @Html.TextBox("usernameTF")
+ <br />
+ <label>Password</label><br />
+ @Html.Password("passwordTF")
+ <br />
+
+ <input type="button" value="Save" id="Save" />
+<span id="msg" style="color:red;"/>
+ </div>
+ </form>
+ 
+ 
+ </div>
