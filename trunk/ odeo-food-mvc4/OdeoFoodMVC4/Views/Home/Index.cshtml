@@ -14,7 +14,7 @@
     });
 
     $('#Save').click(function () {
-        var form = $('#SubmitLogIn');
+        var form = $('#subscriptionForm');
         var url = form.attr('action');
         var formData = form.serialize();
         $.post(url, formData, function (data) {
@@ -54,13 +54,13 @@ enter the name @Html.TextBox("SubmitNameTB")
 
  <div style="width:700px;height:400px;border-radius:10px;background-color: rgb(207, 207, 207);">
  
- <form id="SubmitLogIn" action="/Home/LogIn"> 
+ <form  id="subscriptionForm" action="/Home/LogIn" method="post"> 
  <div style="margin-left:50px;padding-top:30px">
  <label >UserName</label><br />
- @Html.TextBox("usernameTF")
+ @Html.TextBox("Username")
  <br />
  <label>Password</label><br />
- @Html.Password("passwordTF")
+ @Html.Password("Password")
  <br />
 
  <input type="button" value="Save" id="Save" />

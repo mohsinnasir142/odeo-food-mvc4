@@ -44,11 +44,11 @@ namespace OdeoFoodMVC4.Controllers
             return "your name is "+input;
         }
 
-
-        public string LogIn(LoginModelNew obj)
+        [HttpPost]
+        public string LogIn(LoginModel obj)
         {
 
-            return obj.username +"   "+ obj.password ;
+            return obj.UserName+" is  "+obj.Password;
         }
     }
 }
