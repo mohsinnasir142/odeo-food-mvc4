@@ -191,11 +191,15 @@ ul#menu {
         display: inline;
         list-style: none;
         padding-left: 15px;
+        background-color:#85CEE9;
+        border-radius:5px;
+        
     }
 
         ul#menu li a {
             background: none;
-            color: #999;
+            color: White;
+            margin-right: 11px;
             text-decoration: none;
         }
 

@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CusineController.cs" />
+    <Compile Include="Controllers\DishController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -290,6 +291,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dish\Dish.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dish\AllDishes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dish\CreateDishType.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dish\AllDishType.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
