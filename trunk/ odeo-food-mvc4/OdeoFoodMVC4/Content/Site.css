@@ -216,7 +216,9 @@ ul#menu {
     background-color: #fff;
 }
 
-    .featured .content-wrapper {
+    .featured .content-wrapper 
+    {
+        min-height:220px;
         background-color: #7ac0da;
         background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);

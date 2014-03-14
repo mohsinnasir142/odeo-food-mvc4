@@ -19,28 +19,29 @@
                         @Html.Partial("_LoginPartial")
                     </section>
                     <nav>
+                   
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                             @if (Roles.IsUserInRole("customer"))
                             {
-                                <li>@Html.ActionLink("Create Order", "Create")</li>
-                                <li>@Html.ActionLink("View Dishes", "Create")</li>
-                                <li>@Html.ActionLink("Sales Record", "Create")</li>
+                                <li>@Html.ActionLink("Create Order", "CreateOrder","Customer")</li>
+                                <li>@Html.ActionLink("All Dishes", "AllDishes", "Dish")</li>
+                               
                             }
                             else if (Roles.IsUserInRole("administrator"))
-                                 {
+                            {
                                 <li>@Html.ActionLink("Create Dish", "Dish", "Dish")</li>
                                 <li>@Html.ActionLink("All Dishes", "AllDishes", "Dish")</li>
                                 <li>@Html.ActionLink("Create Dish Type", "CreateDishType", "Dish")</li>
                                 <li>@Html.ActionLink("All Dish Type", "AllDishType", "Dish")</li><br /><br />
-                                <li>@Html.ActionLink("All Customers", "Create")</li>
-                                <li>@Html.ActionLink("total Sales", "Create")</li>
+                                <li>@Html.ActionLink("All Customers", "AllCustomer", "Customer")</li>
+                                <li>@Html.ActionLink("total Sales", "Sales", "Customer")</li>
                                 <li>@Html.ActionLink("Create Roles", "Create")</li>
                                 <li>@Html.ActionLink("Manage Roles", "Create")</li>
                                 
-                                 }
+                            }
                             else if (Roles.IsUserInRole("manager"))
                             {
                                 <li>@Html.ActionLink("Create Order", "Create")</li>
