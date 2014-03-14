@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace OdeoFoodMVC4.Controllers
 {
+    
     public class DishController : Controller
     {
         //
@@ -15,11 +16,12 @@ namespace OdeoFoodMVC4.Controllers
         {
             return View();
         }
-
+        [Authorize(Roles = "administrator, manager")]
         public ActionResult Dish()
         {
             return View();
         }
+        [Authorize(Roles = "administrator, manager,customer")]
         public ActionResult AllDishes()
         {
             return View();
