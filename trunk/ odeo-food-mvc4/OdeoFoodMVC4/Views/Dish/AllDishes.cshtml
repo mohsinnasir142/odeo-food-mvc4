@@ -1,5 +1,50 @@
-﻿@{
+﻿@model System.Data.DataTable 
+@using System.Data; 
+@{
     ViewBag.Title = "AllDishes";
 }
+@section scripts{
+<script type="text/jscript">
 
-<h2>AllDishes</h2>
+ $('.takeOrder').click(function () {
+      
+            alert('asd');
+              });
+
+</script>
+}
+<h2>Report</h2> 
+
+<table style="width:100%;"> 
+    <thead> 
+    <tr> 
+    @foreach (DataColumn col in Model.Columns)     
+    {          
+        <th>@col.ColumnName</th> 
+    }  
+    <th>Quantity</th>    
+    </tr> 
+    </thead>      
+       
+    <tbody> 
+    @foreach (DataRow row in Model.Rows)
+    {         <tr>
+        <td colspan="7">&nbsp;</td>
+        </tr>
+        <tr> 
+            <td style="padding-top: 25px;">@row["ID"]</td> 
+            <td style="padding-top: 25px;">@row["Name"]</td> 
+            <td style="padding-top: 25px;">@row["Price"]</td> 
+            <td style="padding-top: 25px;">@row["Description"]</td> 
+           <td  style="width:15%; " ><img src="@row["Image"]" width="70%"/></td>
+           <td  style="width:15%; padding-top: 25px;"><input type="number" style="width:35%;"  min="1"  /> </td>
+           <td  style="padding-top: 25px;"><button class="takeOrder" itemid="@row["ID"]" >Take Order</button> </td>
+        </tr> 
+        
+      
+    }   
+      
+    </tbody> 
+</table>
+
+

@@ -1,5 +1,39 @@
-﻿@{
-    ViewBag.Title = "CreateDishType";
+﻿@model OdeoFoodMVC4.Models.DishModelClasses
+@{
+    ViewBag.Title = "Create Item Types";
 }
 
-<h2>CreateDishType</h2>
+
+
+<h2>Create Item Types</h2>
+
+
+ @using (Html.BeginForm("InsertDishType", "Dish", FormMethod.Post, new { @class = "createDishType-form" }))
+ {
+ @Html.ValidationSummary(true) 
+ <div style="margin-left:50px;padding-top:30px">
+  
+ <label >Dish category</label><br />
+  @Html.TextBoxFor(m => m.DishCategoryTB)
+     <br />
+  @Html.ValidationMessageFor(model => model.DishCategoryTB)
+  
+
+ <br /> <br />
+ <label>Dish Description</label><br />
+ 
+     @Html.TextAreaFor(m => m.DishDescriptionTB)
+     <br />
+     @Html.ValidationMessageFor(model => model.DishDescriptionTB)
+ <br />
+
+ <input type="submit" value="Create Item type" id="Save" />
+<span id="msg" style="color:red;"/>
+
+  </div>
+ }
+@section Scripts 
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+  
