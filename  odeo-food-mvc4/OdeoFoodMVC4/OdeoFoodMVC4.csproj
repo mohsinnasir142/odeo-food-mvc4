@@ -16,6 +16,10 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -172,6 +177,14 @@
     </Compile>
     <Compile Include="Models\AboutModel.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ConnectionManager.cs" />
+    <Compile Include="Models\DishModelClasses.cs" />
+    <Compile Include="Models\Dish.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dish.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DishModel.cs" />
     <Compile Include="Models\homeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -244,6 +257,9 @@
     <Content Include="Images\big2.jpg" />
     <Content Include="Images\big3.jpg" />
     <Content Include="Images\big4.jpg" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\dishes\big2.jpg" />
+    <Content Include="Images\edit.png" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\hor_separator.png" />
     <Content Include="Images\logo.png" />
@@ -312,6 +328,7 @@
     <Content Include="Images\prettyPhoto\light_square\loader.gif" />
     <Content Include="Images\prettyPhoto\light_square\sprite.png" />
     <Content Include="Images\prevnext.png" />
+    <Content Include="Images\save.png" />
     <Content Include="Images\slide.jpg" />
     <Content Include="Images\slide1.jpg" />
     <Content Include="Images\slide2.jpg" />
@@ -346,7 +363,9 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -388,6 +407,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\DBImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -414,7 +434,20 @@
     <Content Include="Views\Customer\CreateOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Models\Dish.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Dish.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\js\PIE.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Dish.dbml.layout">
+      <DependentUpon>Dish.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

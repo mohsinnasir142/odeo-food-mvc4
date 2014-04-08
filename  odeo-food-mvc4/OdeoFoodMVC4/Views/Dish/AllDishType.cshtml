@@ -1,5 +1,58 @@
-﻿@{
+﻿@model System.Data.DataTable 
+@using System.Data;
+@{
     ViewBag.Title = "AllDishType";
 }
+@section scripts{
+<script type="text/jscript">
 
+ $('.edit').click(function () {
+       alert('Edits');
+      });
+ $('.delete').click(function () {
+     
+     var url = "/Dish/deleteDishType";
+     var formData = 2;
+     $.post(url, formData, function () {
+         alert("asd");
+     });
+
+ });
+ $('.save').click(function () {
+     alert('Save');
+ });
+</script>
+}
 <h2>AllDishType</h2>
+
+<table style="width:100%;"> 
+    <thead> 
+    <tr> 
+    @foreach (DataColumn col in Model.Columns)     
+    {          
+        <th>@col.ColumnName</th> 
+    }  
+    <th>Actions</th>    
+    </tr> 
+    </thead>      
+       
+    <tbody> 
+    @foreach (DataRow row in Model.Rows)
+    {         <tr>
+        <td colspan="7">&nbsp;</td>
+        </tr>
+        <tr> 
+            <td style="padding-top: 25px;">@row["ID"]</td> 
+            <td style="padding-top: 25px;">@row["Category"]</td> 
+            <td style="padding-top: 25px;">@row["Description"]</td> 
+            <td style="padding-top: 25px;"><a href="#" class="edit" itemid="@row["ID"]"><img src="~/Images/edit.png" width="32px" height="32px" /></a></td> 
+           <td  style="width:15%; padding-top: 25px;" ><a href="#" class="delete" itemid="@row["ID"]"><img src="~/Images/delete.png" width="32px" height="32px" /></a></td>
+           <td  style="width:15%; padding-top: 25px;"><a href="#" class="save" itemid="@row["ID"]"><img src="~/Images/save.png" width="32px" height="32px" /></a> </td>
+           @*<td  style="padding-top: 25px;"><button class="takeOrder" itemid="@row["ID"]" >Take Order</button> </td>*@
+        </tr> 
+        
+      
+    }   
+      
+    </tbody> 
+</table>

@@ -1,5 +1,58 @@
-﻿@{
+﻿@model OdeoFoodMVC4.Models.CreateDishModel
+@{
     ViewBag.Title = "Dish";
 }
 
 <h2>Dish</h2>
+@using (Html.BeginForm("InsertDish", "Dish", FormMethod.Post, new { @class = "createDishType-form", enctype = "multipart/form-data" }))
+{
+     @Html.ValidationSummary(true) 
+     <div style="margin-left:50px;padding-top:30px">
+  
+ <label >Dish Name</label><br />
+  @Html.TextBoxFor(m => m.ItemName)
+     <br />
+  @Html.ValidationMessageFor(model => model.ItemName)
+ <br /> <br />
+
+         <label >Price</label><br />
+  @Html.TextBoxFor(m => m.ItemPrice)
+     <br />
+  @Html.ValidationMessageFor(model => model.ItemPrice)
+ <br /><br />
+ <label>Description</label><br />
+ 
+     @Html.TextAreaFor(m => m.ItemDescription)
+     <br />
+     @Html.ValidationMessageFor(model => model.ItemDescription)
+          
+         <br /><br />
+         <table><tr>
+             <td style="padding-top: 12px;"> <label >Select Dish Type</label></td>
+             <td style="padding-left:40px;">  @Html.DropDownList("ItemTypes")</td>
+             
+             <td style="padding-left: 80px;padding-top: 12px;"> <label >Number of Person(s) can be served</label></td>
+             <td>  @Html.TextBoxFor(m => m.ItemServing, new { @id="itemServing" })</td>
+          </tr>  </table>
+         <br />
+         <table><tr><td colspan="2" style="width:545px;">&nbsp;</td>
+          <td colspan="2"> @Html.ValidationMessageFor(model => model.ItemServing)</td></tr></table>
+
+ <br />
+
+        <input type="file" name="file" id="file" style="width: 77%;" /> <br />
+   <br />
+
+ <input type="submit" value="Create Dish" id="Save" />
+<span id="msg" style="color:red;"/>
+
+  </div>
+ }
+
+
+
+@section Scripts 
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+ 

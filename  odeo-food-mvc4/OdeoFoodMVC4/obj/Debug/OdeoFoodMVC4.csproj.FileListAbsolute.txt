@@ -101,6 +101,6 @@ D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\bin\DotNetOpenAuth.OAuth.Consumer.
 D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\bin\DotNetOpenAuth.OAuth.xml
 D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\bin\DotNetOpenAuth.OpenId.xml
 D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\obj\Debug\OdeoFoodMVC4.csprojResolveAssemblyReference.cache
 D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\obj\Debug\OdeoFoodMVC4.dll
 D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\obj\Debug\OdeoFoodMVC4.pdb
+D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\obj\Debug\OdeoFoodMVC4.csprojResolveAssemblyReference.cache
