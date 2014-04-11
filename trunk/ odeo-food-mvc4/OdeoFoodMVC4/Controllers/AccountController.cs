@@ -79,7 +79,18 @@ namespace OdeoFoodMVC4.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues: new
+                    {
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        EmailAddress = model.EmailAddress,
+                        Phone = model.Phone,
+                        Mobile=model.Mobile,
+                        Address=model.Address,
+                        SSN=model.SSN
+                    });
+                   
+
                     WebSecurity.Login(model.UserName, model.Password);
                     Roles.AddUserToRole(model.UserName, "customer");
                     return RedirectToAction("Index", "Home");

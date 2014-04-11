@@ -709,6 +709,18 @@ footer a:hover {
     width:700px;
 
 }
+.customerProfileComplete-form input[type=text]
+{
+    height:25px;
+    width:450px;
+
+}
+.customerProfileComplete-form textarea
+{
+    height:150px;
+    width:450px;
+
+}
 #itemServing
 {
     width: 100px;
@@ -724,4 +736,10 @@ footer a:hover {
 .edit:hover 
 {
     color:rgba(255, 255, 255, 0);
+}
+.registertable label
+{
+    margin-left: 15px;
+    margin-top: 14px;
+    margin-right:10px;
 }

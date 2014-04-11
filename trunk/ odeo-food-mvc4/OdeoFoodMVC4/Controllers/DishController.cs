@@ -68,7 +68,8 @@ namespace OdeoFoodMVC4.Controllers
                     createDishObj.ItemImageUrl = "../../Images/DBImages/notfound.jpg";
                 }
                 createDishObj.ItemServing = "Order for "+ createDishObj.ItemServing+" Person";
-                createDishObj.ItemTypeFK = Convert.ToInt32(frmCollection.GetValue("itemTypes").AttemptedValue.ToString());
+                createDishObj.ItemTypeFK = Convert.ToInt32(frmCollection.GetValue("itemTypes").AttemptedValue.ToString().Split('+')[0].ToString());
+                createDishObj.itemDishType = frmCollection.GetValue("itemTypes").AttemptedValue.ToString().Split('+')[1].ToString();
                 model.InsertDish(createDishObj);
                 return RedirectToAction("Dish", "Dish", null);
             }

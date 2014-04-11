@@ -38,7 +38,7 @@ namespace OdeoFoodMVC4.Models
             SqlDataReader reader = cmd.ExecuteReader();
             List<SelectListItem> items = new List<SelectListItem>();
             while(reader.Read()){
-             items.Add(new SelectListItem { Text = reader["category"].ToString(), Value = reader["id"].ToString() });
+                items.Add(new SelectListItem { Text = reader["category"].ToString(), Value = reader["id"].ToString() + "+" + reader["category"].ToString() });
             }
             conn.Close();
             return items;
@@ -47,7 +47,7 @@ namespace OdeoFoodMVC4.Models
         {  
             SqlConnection conn = ConnectionManager.getConnection();
             conn.Open();
-            string query = "insert into item values('" + model.ItemName + "'," + model.ItemPrice + ",'"+model.ItemDescription+"',"+model.ItemTypeFK+",'"+model.ItemImageUrl+"','"+model.ItemServing+"')";
+            string query = "insert into item values('" + model.ItemName + "'," + model.ItemPrice + ",'"+model.ItemDescription+"',"+model.ItemTypeFK+",'"+model.ItemImageUrl+"','"+model.ItemServing+"','"+model.itemDishType+"')";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery(); 
             conn.Close();  
