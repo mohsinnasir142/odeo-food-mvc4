@@ -37,6 +37,8 @@ namespace OdeoFoodMVC4.Models
         [Required(ErrorMessage = "Item Serving is required")]
         [RegularExpression(@"[0-9]*\.?[0-9]+", ErrorMessage = "Serving number  must be a Numbers only.")]
         public string ItemServing { get; set; }
+
+        public string itemDishType { get; set; }
     
     }
    

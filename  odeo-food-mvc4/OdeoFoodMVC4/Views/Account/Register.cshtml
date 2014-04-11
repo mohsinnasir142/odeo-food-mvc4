@@ -4,7 +4,7 @@
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
+
     <h2>Create a new account.</h2>
 </hgroup>
 
@@ -12,24 +12,47 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
 
-    <fieldset>
-        <legend>Registration Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-        </ol>
-        <input type="submit" value="Register" />
-    </fieldset>
+    <table class="registertable">
+        <tr>
+            <td> @Html.LabelFor(m => m.UserName)</td>
+            <td> @Html.TextBoxFor(m => m.UserName)</td>
+            <td>@Html.LabelFor(m => m.SSN)</td>
+            <td>@Html.TextBoxFor(m => m.SSN)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Password)</td>
+            <td>@Html.PasswordFor(m => m.Password)</td>
+            <td>@Html.LabelFor(m => m.ConfirmPassword)</td>
+            <td>@Html.PasswordFor(m => m.ConfirmPassword)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.FirstName)</td>
+            <td>@Html.TextBoxFor(m => m.FirstName)</td>
+            <td>@Html.LabelFor(m => m.LastName)</td>
+            <td>@Html.TextBoxFor(m => m.LastName)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.EmailAddress)</td>
+            <td>@Html.TextBoxFor(m => m.EmailAddress)</td>
+            <td>@Html.LabelFor(m => m.Address)</td>
+            <td>@Html.TextBoxFor(m => m.Address)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Phone)</td>
+            <td>@Html.TextBoxFor(m => m.Phone)</td>
+            <td>@Html.LabelFor(m => m.Mobile)</td>
+            <td>@Html.TextBoxFor(m => m.Mobile)</td>
+
+        </tr>
+       
+    </table>
+    <br />
+    <input type="submit" value="Register" style="margin-left:83.5%;" />
+  
 }
 
 @section Scripts {
