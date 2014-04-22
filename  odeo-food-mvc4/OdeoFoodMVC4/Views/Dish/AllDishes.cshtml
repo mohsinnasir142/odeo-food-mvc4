@@ -5,17 +5,40 @@
 }
 @section scripts{
 <script type="text/jscript">
+    var hashesOfOrder = {};
 
- $('.takeOrder').click(function () {
-      
-            alert('asd');
+    $('.takeOrder').click(function (ev) {
+        var id = ev.currentTarget.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;
+        var name = ev.currentTarget.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;
+        var price = Number(ev.currentTarget.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML);
+        var quantity = Number($(ev.currentTarget.parentElement.previousElementSibling.childNodes[0]).val());
+        var priceForSingleDish = Number(price) * Number(quantity);
+        if (hashesOfOrder[id] == undefined) {
+            hashesOfOrder[id] = [name, price, quantity, priceForSingleDish];
+        }
+        else {
+
+            hashesOfOrder[id][2] = hashesOfOrder[id][2] + quantity;
+            hashesOfOrder[id][3] = hashesOfOrder[id][3] + priceForSingleDish;
+        }
+
+
+       
+     if ($(ev.currentTarget.parentElement.previousElementSibling.childNodes[0]).val() == "") {
+
+         alert("Please Select A Quantity for Order a Dish");
+     }
+     else if ($(ev.currentTarget.parentElement.previousElementSibling.childNodes[0]).val() != "") {
+         $('#totalorder').append(" <table style='width:100%;'> <tr ><td style='padding-left:25px;width:85%;color: #9C2F33;font-weight: 800;'>" + ev.currentTarget.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML + "</td><td> <img src='/Images/edit.png' width='16px' height='16px' /> </td> </tr> <tr> <td style='padding-left:25px;width:85%;color: #9C2F33;font-weight: 800;'>Quantity : " + $(ev.currentTarget.parentElement.previousElementSibling.childNodes[0]).val() + "</td> </tr> <tr>  <td  style='padding-left:25px;width:85%;color: #5fa022;font-weight: 800;'  >Amount :" + priceForSingleDish + " Rs</td><td> <img src='/Images/delete.png' width='16px' height='16px' /> </td> </tr> </table><hr />");
+     }
+
               });
 
 </script>
 }
 <h2>Report</h2> 
 
-<table style="width:100%;"> 
+<table style="width:75%;float:left;"> 
     <thead> 
     <tr> 
     @foreach (DataColumn col in Model.Columns)     
@@ -46,5 +69,18 @@
       
     </tbody> 
 </table>
+<div style="background-color:rgb(204, 197, 40);width:17%;height:375px;float:left;border-radius: 10px;position: fixed;margin-left: 46%;overflow:auto;" id="totalorder" >
+    <h4 style="margin-left: 30%;margin-top: 3%;font-weight: bold;">You Order List</h4>
+    <hr />
+ 
+</div>
+
+<div id="totalamount" style="background-color: #5fa022;width: 17%;min-height: 106px;float: left;border-radius: 70px;position:fixed;margin-left: 46%;margin-top: 24%;" >
+    <h2 style="margin-left: 37%;margin-top: 3%;font-weight: bold;color:white;">Total</h2>
+    <hr style="width: 60%;" />
+
+    <label style="margin-left: 42px;margin-top: 18px;color: rgb(204, 197, 40);"> Your Grand Total : 1500-/ Rs.  </label>
+ 
+</div>
 
 
