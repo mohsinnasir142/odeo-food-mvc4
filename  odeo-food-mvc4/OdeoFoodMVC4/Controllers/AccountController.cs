@@ -10,6 +10,10 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using OdeoFoodMVC4.Filters;
 using OdeoFoodMVC4.Models;
+using CaptchaMvc.Attributes;
+using CaptchaMvc.HtmlHelpers;
+using CaptchaMvc.Interface;
+
 
 namespace OdeoFoodMVC4.Controllers
 {
@@ -74,35 +78,42 @@ namespace OdeoFoodMVC4.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
-            if (ModelState.IsValid)
-            {
-                // Attempt to register the user
-                try
-                {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues: new
-                    {
-                        FirstName = model.FirstName,
-                        LastName = model.LastName,
-                        EmailAddress = model.EmailAddress,
-                        Phone = model.Phone,
-                        Mobile=model.Mobile,
-                        Address=model.Address,
-                        SSN=model.SSN
-                    });
-                   
 
-                    WebSecurity.Login(model.UserName, model.Password);
-                    Roles.AddUserToRole(model.UserName, "customer");
-                    return RedirectToAction("Index", "Home");
-                }
-                catch (MembershipCreateUserException e)
+            if (this.IsCaptchaValid("Captcha is not valid"))
+            {
+                if (ModelState.IsValid)
                 {
-                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    // Attempt to register the user
+                    try
+                    {
+                        WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues: new
+                        {
+                            FirstName = model.FirstName,
+                            LastName = model.LastName,
+                            EmailAddress = model.EmailAddress,
+                            Phone = model.Phone,
+                            Mobile = model.Mobile,
+                            Address = model.Address,
+                            SSN = model.SSN
+                        });
+
+
+                        WebSecurity.Login(model.UserName, model.Password);
+                        Roles.AddUserToRole(model.UserName, "customer");
+                        return RedirectToAction("Index", "Home");
+                    }
+                    catch (MembershipCreateUserException e)
+                    {
+                        ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    }
                 }
+
+                // If we got this far, something failed, redisplay form
+                return View(model);
             }
 
-            // If we got this far, something failed, redisplay form
-            return View(model);
+            TempData["ErrorMessage"] = "Error: captcha is not valid.";
+            return View();
         }
 
         //

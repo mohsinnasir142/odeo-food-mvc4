@@ -1,4 +1,5 @@
-﻿@model OdeoFoodMVC4.Models.RegisterModel
+﻿@using CaptchaMvc.HtmlHelpers
+@model OdeoFoodMVC4.Models.RegisterModel
 @{
     ViewBag.Title = "Register";
 }
@@ -48,6 +49,7 @@
             <td>@Html.TextBoxFor(m => m.Mobile)</td>
 
         </tr>
+        <tr><td>  @Html.Captcha("Refresh", "Input", 5, "Is required field.", true)</td></tr>
        
     </table>
     <br />

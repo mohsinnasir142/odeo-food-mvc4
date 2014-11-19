@@ -104,3 +104,6 @@ D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\bin\DotNetOpenAuth.OpenId.RelyingP
 D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\obj\Debug\OdeoFoodMVC4.dll
 D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\obj\Debug\OdeoFoodMVC4.pdb
 D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\obj\Debug\OdeoFoodMVC4.csprojResolveAssemblyReference.cache
+D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\bin\CaptchaMvc.dll
+D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\bin\CaptchaMvc.pdb
+D:\Mohsin\Personal Data\OdeoFood\OdeoFoodMVC4\bin\CaptchaMvc.xml
